@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// import Header from './componants/header';
+// import Content from './componants/content';
+import Headers from './componants/headers';
+import Appbar from './componants/header2';
+import Body from './componants/body';
+import Shop from './componants/shop';
+import Mi from './componants/minn'
+import {BrowserRouter as Router , Route  } from 'react-router-dom';
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Router>
+        <Route exact path="/"><Body /></Route>
+        <Route exact path="/shops"><Shop /></Route>
+      
+      <Headers />
+      <Appbar />
+      
+      </Router>
+      {/* <Mi /> */}
+    </React.Fragment>
   );
 }
 
